@@ -16,15 +16,28 @@ names(gss) <- tolower(names(gss))
 # Remove underscore from id name
 names(gss)[which(names(gss) == "id_")] <- "id"
 
+# Labels for partyid variable
 pidlabels <- c("strong democrat", "democrat", "left independent",
               "independent", "right independent", "republican",
               "strong republican")
-edlevels <- cut(0:20, breaks = c(0, 8, 11, 12, 19, 20), 
-                labels = c("less than hs", " some hs", "hs grad", "some college",
-                           "college degree"), ordered = TRUE)
+
+# gss$sex <- factor(gss$sex, labels = c("male", "female"))
+# 
+# gss$year <- NULL
+# 
+# gss$usetech[gss$usetech > 100 | gss$usetech < 0] <- NA
+# 
+# gss$educ[gss$educ > 20] <- NA
+# 
+# 
+# gss$educ <- cut(gss$educ, breaks = c(0, 8, 11, 12, 19, 20), 
+#             labels = c("less than hs", " some hs", 
+#                        "hs grad", "some college",
+#                        "college degree"), 
+#             ordered = TRUE)
 # Clean variables
 gss <- within(gss, {
-                 year = NULL # Year is constant (2018)
+                 year <-  NULL # Year is constant (2018)
                  usetech[usetech > 100 | usetech < 0] <- NA # Recode missing
                  happy[happy > 3] <- NA                     # Recode missing
                  partyid[partyid > 6] <- NA                 # Recode missing
@@ -43,4 +56,7 @@ gss <- within(gss, {
                  hrs2[ hrs2 < 0] <- NA
                  })
 
+
+# Save cleaned data as R data file
+#save(gss, file = "data/gss.Rdata")
 
