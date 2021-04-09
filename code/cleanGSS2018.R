@@ -59,4 +59,3 @@ gss <- within(gss, {
 
 # Save cleaned data as R data file
 #save(gss, file = "data/gss.Rdata")
-

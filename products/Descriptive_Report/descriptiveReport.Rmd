@@ -1,0 +1,31 @@
+---
+title: "Descriptive Report"
+author: "William Murrah"
+date: "4/9/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(psych)
+```
+
+
+```{r}
+source("code/cleanGSS2018.R")
+
+summary(gss)
+```
+
+## Explore Distributions
+
+```{r}
+pairs.panels(gss[ , c("usetech", "happy", "rincome")])
+```
+
+```{r}
+describe(gss[ , c("usetech", "happy", "rincome")])
+```
+
