@@ -7,7 +7,7 @@
   year      = {2018},
 }
 
-@Book{Tukey1977Exploratorydataanalysis,
+@Book{tukey1977exploratory,
   author    = {Tukey, John W. and others},
   publisher = {Reading, Mass.},
   title     = {Exploratory data analysis},

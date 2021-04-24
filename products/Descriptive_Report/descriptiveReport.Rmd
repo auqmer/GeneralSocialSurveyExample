@@ -3,10 +3,11 @@ title: "Descriptive Report"
 author: "William Murrah"
 date: "4/9/2021"
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 bibliography: descriptiveReport.bib
+csl: ../../style/apa.csl
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +16,7 @@ library(psych)
 library(texreg)
 ```
 
-The purpose of this project is to demonstrate the use of Rmarkdown to generate reports integrating text and R code with output [@xie2018r].
+The purpose of this project is to demonstrate the use of Rmarkdown to generate reports integrating text and R code with output [@Xie2018Rmarkdowndefinitive].
 
 ```{r}
 source("code/cleanGSS2018.R")
@@ -25,7 +26,7 @@ summary(gss)
 
 ## Explore Distributions
 
-@tukey1977exploratory said exploring data is really important.
+@Tukey1977Exploratorydataanalysis said exploring data is really important.
 ```{r}
 pairs.panels(gss[ , c("usetech", "happy", "rincome")])
 ```
